@@ -1,6 +1,7 @@
 import express from 'express'
 import cors from 'cors'
-import TwitterRoutes from './routes/TwitterRoutes'
+import TwitterRoutes from '../src/routes/TwitterRoutes'
+
 // import mongoose from 'mongoose'
 
 class App {
