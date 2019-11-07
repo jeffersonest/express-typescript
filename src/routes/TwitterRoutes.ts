@@ -1,6 +1,6 @@
 import { Router } from 'express'
-import TwitterController from '../controllers/TwitterController'
-import JsonWebToken from '../middlewares/JwtMiddleware'
+import TwitterController from '../app/controllers/TwitterController'
+import JsonWebToken from '../app/middlewares/JwtMiddleware'
 
 const TwitterRoutes = Router()
 const Jwt = JsonWebToken
