@@ -13,7 +13,7 @@ import ErrnoException from '../interfaces/IError'
 import Twit from 'twit'
 
 class TwitterCore {
-  public Twit: any
+  public Twit: any;
   private get = util.promisify(request.get);
   private post = util.promisify(request.post);
   public TWITTER_CONSUMER_KEY = ' '
@@ -152,11 +152,11 @@ class TwitterCore {
         // save  Mention Data on database
         const DB = await TwitterMention.create({ message_id, created_at, text, author_id, stats, lang, possibly_sensitive })
 
-        await this.sendMessage(author_id, 'Vi que está tendo problemas, Poderia me conta mais?')
+        await this.sendMessage(author_id, 'Vi que está tendo problemas, você poderia me falar um pouco mais sobre o seu problema?')
 
         console.log('Created: ', DB)
       } catch (e) {
-        console.log(e)
+        // console.log(e) commented for exclude json parse twitter errors
       }
     }).on('error', (error: ErrnoException) => {
       if (error.code === 'ETIMEDOUT') {
